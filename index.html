@@ -12,15 +12,17 @@
 
 <table id="container">
     <tr>
-        Points
-        <td><input type="text" id="points" value="90,80,70"></td>
-        <td><input type="text" id="weight" value="30"> <br></td>
+        <th>Points</th>
+        <th>Weight</th>
     </tr>
     <tr>
-        <td><input type="text" id="newCat" value="Enter new category"></td>
-        <td><button class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+        <td><input type="text" class="points" placeholder="90,80,70"></td>
+        <td><input type="text" class="weight" placeholder="30"></td>
     </tr>
 </table>
+
+<input type="text" id="catName" placeholder="Enter new category">
+<button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black">+</button>
 
 </body>
 </html>
