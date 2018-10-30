@@ -1,29 +1,27 @@
 var count = 0;
 
-function calculateGradeNeeded(){
-    var curGrade = calculateCurrentGrade();
 
 
-}
 function calculateCurrentGrade(){
+    var string = document.getElementById('1points').value;
+    var array = convertArrayStringToNumber(string);
     var sum = 0;
-    var grades = convertArrayStringToNumber(string);
-    for(var i = 0; i < grades.length; i++){
-        sum += grades[i];
+    for(var i = 0; i < array.length; i++){
+        sum += array[i];
     }
 
-    sum = sum / (grades.length);
+    sum = sum / (array.length);
     return sum;
 }
 
 
 function convertArrayStringToNumber(string){
-    //var sGrades = document.getElementsByClassName('points').value;
     var grades = string.split(",");
 
     for(var i = 0; i < grades.length; i++){
         grades[i] = parseInt(grades[i]);
     }
+    return grades;
 }
 
 
@@ -59,6 +57,8 @@ function addRow() {
         }else{
             alert("Please enter a category name");
         }
+
+
     }else{
         alert("Too many categories, refresh to restart");
     }
