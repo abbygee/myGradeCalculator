@@ -1,17 +1,40 @@
 var count = 0;
 
-
-
 function calculateCurrentGrade(){
-    var string = document.getElementById('1points').value;
-    var array = convertArrayStringToNumber(string);
-    var sum = 0;
+    /* This calculates the first row which is required for the site */
+    var cat1 = document.getElementById('ipoints').value;
+    var cat1num = convertArrayStringToNumber(cat1);
+    var cat1avg = averageArray(cat1num);
+    var cat1weight = document.getElementById('iweight').value;
+    var cat1final = cat1avg * (cat1weight / 100 );
+
+    /* This should calculate the rows that the user adds to the site */
+    var constant = 0;
+    if(count !== 0){
+       for(var i = 0; i < count; i++){
+           var cat = document.getElementById(i + "points").value;
+           var catnum = convertArrayStringToNumber(cat);
+           var catavg = averageArray(catnum);
+           var catweight = document.getElementById(i + "weight").value;
+           var catfinal = catavg * (catweight / 100);
+           constant += catfinal;
+        }
+    }
+    constant += cat1final;
+
+    document.getElementById('test').innerHTML = constant.toString().slice(0,4) + "%";
+}
+
+function averageArray(array){
+    //var string = document.getElementById('ipoints').value;
+    //var array = convertArrayStringToNumber(string);
+    var avg = 0;
     for(var i = 0; i < array.length; i++){
-        sum += array[i];
+        avg += array[i];
     }
 
-    sum = sum / (array.length);
-    return sum;
+    avg = avg / (array.length);
+    return avg;
 }
 
 
@@ -37,13 +60,19 @@ function addRow() {
         /* headings */
         var col3 = document.createElement('th');
         var col4 = document.createElement('th');
+        /* text inputs */
+        var i1 = document.createElement('input');
+        var i2 = document.createElement('input');
 
         if(catName.length >= 1){
             col3.innerHTML = catName + " Points";
             col4.innerHTML = "Weight";
 
-            col1.innerHTML = "<input type=\"text\" class=\"points\">";
-            col2.innerHTML = "<input type=\"text\" class=\"weight\">";
+            i1.id = count + "points";
+            i2.id = count + "weight";
+
+            col1.appendChild(i1);
+            col2.appendChild(i2);
 
             labelRow.appendChild(col3);
             labelRow.appendChild(col4);
