@@ -10,31 +10,39 @@
 <body>
 <h1>Grade Calculator</h1>
 
-<table id="container">
-    <tr>
-        <th>Homework Points</th>
-        <th>Weight</th>
-    </tr>
-    <tr>
-        <td><input type="text" id="ipoints" placeholder="90,80,70"></td>
-        <td><input type="text" id="iweight" placeholder="30"></td>
-    </tr>
-</table>
+<div id="sect1">
+    <table id="table1">
+        <tr>
+            <th>Homework Points</th>
+            <th>Weight</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="ipoints" placeholder="90,80,70"></td>
+            <td><input type="text" id="iweight" placeholder="30"></td>
+        </tr>
+    </table>
 
-<input type="text" id="catName" placeholder="Enter new category">
-<button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black">+</button>
+    <input type="text" id="catName" placeholder="Enter new category">
+    <button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black">+</button>
 
-<h1>Calculate Grade Needed</h1>
+    <br>
+    <button onclick="calculateCurrentGrade()">Get my grade!</button>
+    <div id="grade"></div>
+</div>
 
-<table>
-    <tr>
-        <td>Grade wanted: <input type="text" id="wanted" placeholder="90"></td>
-    </tr>
-    <tr><th>You need to get: <span id="needed"></span>% to get desired grade</th></tr>
-</table>
+<div id="sect2">
+    <h1>Calculate Final Grade Needed</h1>
 
-<button onclick="calculateCurrentGrade()">test</button>
-<div id="test"></div>
+    <table id="table2">
+        <tr>
+            <td>Desired final grade: <input type="text" id="wanted" placeholder="90"></td>
+            <td>Final weight: <input type="text" id="finalweight" placeholder="20"></td>
+        </tr>
+        <tr><th>You need to get a <span id="needed">___</span>% to get your desired grade</th></tr>
+    </table>
+
+    <button onclick="calculateGradeNeeded()">Calculate grade needed!</button>
+</div>
 
 </body>
 </html>
