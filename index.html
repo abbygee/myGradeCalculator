@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<h1>Grade Calculator</h1>
 
 <div id="sect1">
+    <h1>Grade Calculator</h1>
+
     <table id="table1">
         <tr>
             <th>Homework Points</th>
@@ -26,7 +27,7 @@
     <button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black">+</button>
 
     <br>
-    <button onclick="calculateCurrentGrade()">Get my grade!</button>
+    <button onclick="calculateCurrentGrade()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge">Get my grade!</button>
     <div id="grade"></div>
 </div>
 
@@ -38,10 +39,10 @@
             <td>Desired final grade: <input type="text" id="wanted" placeholder="90"></td>
             <td>Final weight: <input type="text" id="finalweight" placeholder="20"></td>
         </tr>
-        <tr><th>You need to get a <span id="needed">___</span>% to get your desired grade</th></tr>
     </table>
 
-    <button onclick="calculateGradeNeeded()">Calculate grade needed!</button>
+    <button onclick="calculateGradeNeeded()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge">Calculate grade needed!</button>
+    <div>You need to get a <span id="needed">___</span>% to get your desired grade</div>
 </div>
 
 </body>
