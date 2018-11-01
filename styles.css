@@ -6,7 +6,6 @@
 
 #sect1, #sect2 {
     text-align: center;
-    font-family: "Times New Roman";
 }
 
 body {
@@ -25,6 +24,27 @@ body {
 #currentGrade {
     font-size: 30px;
 }
+#sect1 {
+    position: relative;
+    top: 30px;
+}
+#sect2 {
+    position: relative;
+    top: 70px;
+}
 
+#userNeed, #grade {
+    position: relative;
+    top: 30px;
+    font-size: 25px;
+    background-color: white;
+    font-family: "Helvetica Neue";
+}
+
+.w3-bungee {
+    font-family: 'Bungee Hairline';
+    font-weight: bold;
+    font-style: italic;
+}
 
 

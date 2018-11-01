@@ -11,7 +11,6 @@ function calculateGradeNeeded(){
     var needed = (desire - cur * (1 - weight)) / weight;
 
     document.getElementById('needed').innerHTML = needed.toFixed(1);
-    //document.getElementById('needed').innerHTML = needed.toString().slice(0,4);
 }
 
 function calculateCurrentGrade(){
@@ -36,13 +35,10 @@ function calculateCurrentGrade(){
     constant += cat1final;
 
     document.getElementById('grade').innerHTML = constant.toFixed(1) + "%";
-    //document.getElementById('grade').innerHTML = constant.toString().slice(0,4) + "%";
     return constant;
 }
 
 function averageArray(array){
-    //var string = document.getElementById('ipoints').value;
-    //var array = convertArrayStringToNumber(string);
     var avg = 0;
     for(var i = 0; i < array.length; i++){
         avg += array[i];

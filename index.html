@@ -6,14 +6,15 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
 </head>
 <body>
+<div class="w3-container w3-white w3-center"><h1 class="w3-xxxlarge w3-bungee">Grade Calculator</h1></div>
 
 <div id="sect1">
-    <h1>Grade Calculator</h1>
 
     <table id="table1">
-        <tr>
+        <tr class="w3-bungee">
             <th>Homework Points</th>
             <th>Weight</th>
         </tr>
@@ -27,12 +28,14 @@
     <button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black">+</button>
 
     <br>
+    <br>
     <button onclick="calculateCurrentGrade()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge">Get my grade!</button>
-    <div id="grade"></div>
+    <br>
+    <span id="grade"></span>
 </div>
 
 <div id="sect2">
-    <h1>Calculate Final Grade Needed</h1>
+    <h1 class="w3-xlarge w3-bungee w3-center">Calculate Final Grade Needed</h1>
 
     <table id="table2">
         <tr>
@@ -41,8 +44,10 @@
         </tr>
     </table>
 
+    <br>
     <button onclick="calculateGradeNeeded()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge">Calculate grade needed!</button>
-    <div>You need to get a <span id="needed">___</span>% to get your desired grade</div>
+    <br>
+    <span id="userNeed">You need to get a <span id="needed">___</span>% to get your desired grade</span>
 </div>
 
 </body>
