@@ -1,18 +1,5 @@
 var count = 0;
 
-function calculateGradeNeeded(){
-    var cur = calculateCurrentGrade();
-    var desire = document.getElementById('wanted').value;
-    var weight = document.getElementById('finalweight').value;
-    parseInt(desire);
-    parseInt(weight);
-    weight = weight/100;
-
-    var needed = (desire - cur * (1 - weight)) / weight;
-
-   document.getElementById('needed').innerHTML = needed.toString().slice(0,4);
-}
-
 function calculateCurrentGrade(){
     /* This calculates the first row which is required for the site */
     var cat1 = document.getElementById('ipoints').value;
@@ -36,8 +23,6 @@ function calculateCurrentGrade(){
     constant += cat1final;
 
     document.getElementById('grade').innerHTML = constant.toString().slice(0,4) + "%";
-
-    return constant;
 }
 
 function averageArray(array){
@@ -52,6 +37,7 @@ function averageArray(array){
     return avg;
 }
 
+
 function convertArrayStringToNumber(string){
     var grades = string.split(",");
 
@@ -60,6 +46,7 @@ function convertArrayStringToNumber(string){
     }
     return grades;
 }
+
 
 function addRow() {
     if(count <= 4){
@@ -70,7 +57,7 @@ function addRow() {
         /* value columns */
         var col1= document.createElement('td');
         var col2 = document.createElement('td');
-        /* heading columns */
+        /* headings */
         var col3 = document.createElement('th');
         var col4 = document.createElement('th');
         /* text inputs */
@@ -93,8 +80,8 @@ function addRow() {
             valueRow.appendChild(col1);
             valueRow.appendChild(col2);
 
-            document.getElementById('table1').appendChild(labelRow);
-            document.getElementById('table1').appendChild(valueRow);
+            document.getElementById('container').appendChild(labelRow);
+            document.getElementById('container').appendChild(valueRow);
             count++;
         }else{
             alert("Please enter a category name");
