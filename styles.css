@@ -12,7 +12,16 @@ body {
     background-color: #d5efff;
 }
 
-#table1, #table2 {
+#table2 {
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    width:100px;
+    font-size: 23px;
+    padding: 20px;
+}
+
+#table1 {
     text-align:center;
     margin-left:auto;
     margin-right:auto;
@@ -37,8 +46,7 @@ body {
     position: relative;
     top: 30px;
     font-size: 25px;
-    background-color: white;
-    font-family: "Helvetica Neue";
+    font-family: Verdana;
 }
 
 .w3-bungee {

@@ -18,24 +18,32 @@ function calculateCurrentGrade(){
     var cat1 = document.getElementById('ipoints').value;
     var cat1num = convertArrayStringToNumber(cat1);
     var cat1avg = averageArray(cat1num);
-    var cat1weight = document.getElementById('iweight').value;
+    var cat1weight = parseInt(document.getElementById('iweight').value);
     var cat1final = cat1avg * (cat1weight / 100 );
 
     /* This should calculate the rows that the user adds to the site */
     var constant = 0;
+    //var totalWeight = 0;
+
     if(count !== 0){
-       for(var i = 0; i < count; i++){
-           var cat = document.getElementById(i + "points").value;
-           var catnum = convertArrayStringToNumber(cat);
-           var catavg = averageArray(catnum);
-           var catweight = document.getElementById(i + "weight").value;
-           constant += (catavg * (catweight / 100));
+        for(var i = 0; i < count; i++){
+            var cat = document.getElementById(i + "points").value;
+            var catnum = convertArrayStringToNumber(cat);
+            var catavg = averageArray(catnum);
+            var catweight = parseInt(document.getElementById(i + "weight").value);
+            constant += (catavg * (catweight / 100));
+            //totalWeight += catweight;
         }
     }
     constant += cat1final;
-
-    document.getElementById('grade').innerHTML = constant.toFixed(1) + "%";
-    return constant;
+   // totalWeight += cat1weight;
+// fix this so it recognizes that ALL input fields are filled in
+    //if(totalWeight === 100 && cat1.length > 1 && cat1weight > 0 && ){
+        document.getElementById('grade').innerHTML = constant.toFixed(1) + "%";
+        return constant;
+    //}else{
+        //alert("Please make sure your total weight equals to 100 and both points and weight are filled in.");
+    //}
 }
 
 function averageArray(array){
@@ -63,6 +71,7 @@ function addRow() {
 
         var labelRow = document.createElement('tr');
         var valueRow = document.createElement('tr');
+
         /* value columns */
         var col1= document.createElement('td');
         var col2 = document.createElement('td');
@@ -85,6 +94,8 @@ function addRow() {
 
             labelRow.appendChild(col3);
             labelRow.appendChild(col4);
+
+            labelRow.setAttribute('class','w3-bungee');
 
             valueRow.appendChild(col1);
             valueRow.appendChild(col2);

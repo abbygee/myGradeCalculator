@@ -25,27 +25,31 @@
     </table>
 
     <input type="text" id="catName" placeholder="Enter new category">
-    <button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black">+</button>
+    <button onclick="addRow()" class="w3-button w3-xlarge w3-circle w3-black" >+</button>
 
     <br>
     <br>
-    <button onclick="calculateCurrentGrade()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge">Get my grade!</button>
+    <button onclick="calculateCurrentGrade()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge w3-xlarge">Get my grade!</button>
     <br>
     <span id="grade"></span>
 </div>
 
 <div id="sect2">
-    <h1 class="w3-xlarge w3-bungee w3-center">Calculate Final Grade Needed</h1>
+    <h1 class="w3-xxlarge w3-bungee w3-center w3-panel w3-topbar w3-bottombar w3-border-light-gray w3-white">Finals Calculator</h1>
 
     <table id="table2">
+        <tr class="w3-bungee w3-center">
+            <td>Desired final grade</td>
+            <td>Final weight</td>
+        </tr>
         <tr>
-            <td>Desired final grade: <input type="text" id="wanted" placeholder="90"></td>
-            <td>Final weight: <input type="text" id="finalweight" placeholder="20"></td>
+            <td><input type="text" id="wanted" placeholder="90"></td>
+            <td><input type="text" id="finalweight" placeholder="20"></td>
         </tr>
     </table>
 
     <br>
-    <button onclick="calculateGradeNeeded()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge">Calculate grade needed!</button>
+    <button onclick="calculateGradeNeeded()" class="w3-button w3-white w3-border w3-border-black w3-round-xlarge w3-xlarge">Calculate grade needed!</button>
     <br>
     <span id="userNeed">You need to get a <span id="needed">___</span>% to get your desired grade</span>
 </div>
