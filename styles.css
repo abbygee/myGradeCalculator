@@ -55,4 +55,8 @@ body {
     font-style: italic;
 }
 
+#addButton {
+    position: relative;
+    bottom: 5px;
+}
 

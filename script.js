@@ -10,7 +10,12 @@ function calculateGradeNeeded(){
 
     var needed = (desire - cur * (1 - weight)) / weight;
 
-    document.getElementById('needed').innerHTML = needed.toFixed(1);
+    if(desire.length > 0 && weight > 0){
+        document.getElementById('needed').innerHTML = needed.toFixed(1);
+    }else{
+        alert("Please enter both a desire grade and weight into the finals calculator");
+    }
+
 }
 
 function calculateCurrentGrade(){
@@ -23,7 +28,7 @@ function calculateCurrentGrade(){
 
     /* This should calculate the rows that the user adds to the site */
     var constant = 0;
-    //var totalWeight = 0;
+    var totalWeight = 0;
 
     if(count !== 0){
         for(var i = 0; i < count; i++){
@@ -32,18 +37,17 @@ function calculateCurrentGrade(){
             var catavg = averageArray(catnum);
             var catweight = parseInt(document.getElementById(i + "weight").value);
             constant += (catavg * (catweight / 100));
-            //totalWeight += catweight;
+            totalWeight += catweight;
         }
     }
     constant += cat1final;
-   // totalWeight += cat1weight;
-// fix this so it recognizes that ALL input fields are filled in
-    //if(totalWeight === 100 && cat1.length > 1 && cat1weight > 0 && ){
+    totalWeight += cat1weight;
+    if(totalWeight === 100 && cat1.length > 1 && cat1weight > 0){
         document.getElementById('grade').innerHTML = constant.toFixed(1) + "%";
         return constant;
-    //}else{
-        //alert("Please make sure your total weight equals to 100 and both points and weight are filled in.");
-    //}
+    }else{
+        alert("Please make sure your total weight equals to 100 and both points and weight are filled in.");
+    }
 }
 
 function averageArray(array){
